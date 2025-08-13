@@ -4,6 +4,8 @@
 @theme {
   --color-primary: #4f39f6;
   --color-secondary: #eef2ff;
+  --color-btn-primary:#615FFF;
+  --color-btn-secondary:#9810FA;
 }
 
 *{

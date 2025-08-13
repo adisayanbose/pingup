@@ -2,15 +2,22 @@ import React, { useEffect, useState } from "react";
 import { dummyStoriesData } from "../assets/assets";
 import { Plus } from "lucide-react";
 import moment from "moment";
+import StoryModal from "./StoryModal";
 
 const StoriesBar = () => {
   const [stories, setstories] = useState([]);
+  const [storyModal, setstoryModal] = useState(false);
   useEffect(() => {
     setstories(dummyStoriesData);
   }, []);
   return (
     <div className=" h-52 flex p-5 gap-2 overflow-x-scroll ">
-      <div className="min-w-1/5 bg-gradient-to-b from-[#EEF2FF] to-[#FFFFFF] rounded-xl border-dashed border-2 border-[#A3B3FF] flex flex-col items-center justify-center gap-3">
+      <div
+        onClick={() => {
+          setstoryModal(true);
+        }}
+        className="min-w-1/5 bg-gradient-to-b from-[#EEF2FF] to-[#FFFFFF] rounded-xl border-dashed border-2 border-[#A3B3FF] flex flex-col items-center justify-center gap-3"
+      >
         <Plus className="bg-primary  flex justify-center text-white  rounded-3xl size-10" />
 
         <h1 className="flex justify-center text-sm">Create Story</h1>
@@ -52,6 +59,7 @@ const StoriesBar = () => {
           </div>
         );
       })}
+      {storyModal && <StoryModal setstoryModal={setstoryModal} />}
     </div>
   );
 };

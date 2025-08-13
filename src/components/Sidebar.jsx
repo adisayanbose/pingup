@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import SidebarComp from "./SidebarComp";
 import { useClerk, UserButton } from "@clerk/clerk-react";
+import Button from "./Button";
 
 const Sidebar = () => {
   const user = dummyUserData;
@@ -56,9 +57,8 @@ const Sidebar = () => {
           <SidebarComp icon={Search} label={"Discover"} to={"Discover"} />
           <SidebarComp icon={User} label={"Profile"} to={"Profile"} />
         </div>
-        <button className="flex justify-center items-center gap-3 bg-gradient-to-r from-[#9810FA] to-[#615FFF] text-white py-3 rounded-xl">
-          <CirclePlus /> Create Post
-        </button>
+       
+        <Button icon={CirclePlus} text={"Create Post"} />
       </div>
 
       <hr className="border-neutral-400    " />
