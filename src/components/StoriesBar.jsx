@@ -3,17 +3,22 @@ import { dummyStoriesData } from "../assets/assets";
 import { Plus } from "lucide-react";
 import moment from "moment";
 import StoryModal from "./StoryModal";
+import ViewStoryModal from "./viewStoryModal";
 
 const StoriesBar = () => {
   const [stories, setstories] = useState([]);
   const [storyModal, setstoryModal] = useState(false);
+  const [viewStory, setviewStory] = useState(null);
+ 
   useEffect(() => {
+
     setstories(dummyStoriesData);
   }, []);
   return (
-    <div className=" h-52 flex p-5 gap-2 overflow-x-scroll ">
+    <div className=" h-52 flex p-5 gap-2 outline-none overflow-x-auto no-scrollbar">
       <div
         onClick={() => {
+      
           setstoryModal(true);
         }}
         className="min-w-1/5 bg-gradient-to-b from-[#EEF2FF] to-[#FFFFFF] rounded-xl border-dashed border-2 border-[#A3B3FF] flex flex-col items-center justify-center gap-3"
@@ -25,12 +30,16 @@ const StoriesBar = () => {
       {stories.map((story, index) => {
         return (
           <div
+            onClick={() => {
+              console.log(story)
+              setviewStory(story);
+            }}
             className="relative shadow-sm hover:shadow-lg  bg-gradient-to-b from-[#615FFF] to-[#9810FA] hover:from-indigo-700 hover:to-purple-800 text-neutral-100 min-w-1/5  rounded-xl h-full aspect-[3/4]  flex justify-center  px-2 overflow-y-hidden overflow-x-scroll hover:cursor-pointer"
             key={index}
           >
             <img
               src={story.user.profile_picture}
-              className="absolute size-10 rounded-4xl border-white border-2 top-2 left-2"
+              className="absolute size-10 rounded-4xl border-white border-2 top-2 left-2 z-10"
               alt=""
               srcSet=""
             />
@@ -59,7 +68,10 @@ const StoriesBar = () => {
           </div>
         );
       })}
+      {/* add_Story Modal */}
       {storyModal && <StoryModal setstoryModal={setstoryModal} />}
+      {/* view_story Modal */}
+      {viewStory && <ViewStoryModal viewStory={viewStory} setviewStory={setviewStory}/>}
     </div>
   );
 };

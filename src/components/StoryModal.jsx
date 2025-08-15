@@ -75,6 +75,7 @@ const StoryModal = ({ setstoryModal }) => {
         <div className="flex justify-center items-center gap-2">
           <button
             onClick={()=>{setmedia(null);
+                setpreviewurl(null)
                 setmode("text");
             }}
             className={`flex-1 hover:cursor-pointer ${
