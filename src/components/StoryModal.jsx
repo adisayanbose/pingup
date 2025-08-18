@@ -17,7 +17,7 @@ const StoryModal = ({ setstoryModal }) => {
   const [media, setmedia] = useState(null);
   const [previewurl, setpreviewurl] = useState(null);
   return (
-    <div className=" bg-black/80 backdrop-blur-xs text-white z-100 fixed inset-0 h-screen w-screen  flex justify-center items-center overflow-scroll ">
+    <div className=" bg-black/80 backdrop-blur-xs text-white z-100 fixed inset-0 h-screen w-screen  flex justify-center items-center">
       <div className="max-h-lg my-auto mx-auto w-full max-w-md p-5 flex flex-col gap-5 ">
         <div className="flex justify-center items-center h-10 ">
           <ArrowLeft
@@ -42,7 +42,7 @@ const StoryModal = ({ setstoryModal }) => {
                 value={text}
                 name=""
                 placeholder="What's on your mind"
-                className="bg-transparent outline-none  w-full h-full resize-none overflow-scroll"
+                className="bg-transparent outline-none  w-full h-full resize-none "
               />
             </div>
           )}

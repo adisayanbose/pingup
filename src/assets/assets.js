@@ -24,6 +24,7 @@ export const menuItemsData = [
 ];
 
 export const dummyUserData = {
+    
     "_id": "user_2zdFoZib5lNr614LgkONdD8WG32",
     "email": "admin@example.com",
     "full_name": "John Warren",

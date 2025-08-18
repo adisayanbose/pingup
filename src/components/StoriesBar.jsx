@@ -15,7 +15,8 @@ const StoriesBar = () => {
     setstories(dummyStoriesData);
   }, []);
   return (
-    <div className=" h-52 flex p-5 gap-2 outline-none overflow-x-auto no-scrollbar">
+    <div className="min-h-52  max-h-52 py-5 flex  gap-2 outline-none overflow-x-auto no-scrollbar">
+      {/* create_Story */}
       <div
         onClick={() => {
       
@@ -27,6 +28,7 @@ const StoriesBar = () => {
 
         <h1 className="flex justify-center text-sm">Create Story</h1>
       </div>
+        {/* all_stories */}
       {stories.map((story, index) => {
         return (
           <div
@@ -34,7 +36,7 @@ const StoriesBar = () => {
               console.log(story)
               setviewStory(story);
             }}
-            className="relative shadow-sm hover:shadow-lg  bg-gradient-to-b from-[#615FFF] to-[#9810FA] hover:from-indigo-700 hover:to-purple-800 text-neutral-100 min-w-1/5  rounded-xl h-full aspect-[3/4]  flex justify-center  px-2 overflow-y-hidden overflow-x-scroll hover:cursor-pointer"
+            className="relative shadow-sm hover:shadow-lg  bg-gradient-to-b from-[#615FFF] to-[#9810FA] hover:from-indigo-700 hover:to-purple-800 text-neutral-100 min-w-1/5  rounded-xl h-full  flex justify-center items-center  px-2 overflow-clip hover:cursor-pointer"
             key={index}
           >
             <img
@@ -50,7 +52,7 @@ const StoriesBar = () => {
               {moment(story.createdAt).fromNow()}
             </p>
             {story.media_type !== "text" && (
-              <div className="absolute inset-0 z-1 rounded-lg overflow-hidden bg-black">
+              <div className="absolute inset-0 z-1 rounded-lg  bg-black">
                 {story.media_type === "image" ? (
                   <img
                     className="h-full w-full object-cover hover:scale-110 transition duration-500 opacity-70 hover:opacity-80"

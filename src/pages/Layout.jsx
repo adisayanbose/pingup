@@ -7,7 +7,7 @@ const Layout = () => {
   const user = dummyUserData;
 
   return user ? (
-    <div className="h-screen w-screen flex">
+    <div className="h-screen w-screen flex ">
       <Sidebar />
       <div className="flex-1 h-full">
         <Outlet />

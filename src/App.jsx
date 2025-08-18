@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
-import Feed from "./pages/Feed";
+import Feed from "./pages/Feed"; 
 import Messages from "./pages/Messages";
 import Discover from "./pages/Discover";
 import Profile from "./pages/Profile";
