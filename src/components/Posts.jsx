@@ -1,14 +1,16 @@
 import { BadgeCheck, Heart, MessageCircle, Share2 } from "lucide-react";
 import moment from "moment";
 import { dummyUserData } from "../assets/assets";
+import { useNavigate } from "react-router-dom";
 
 const Posts = ({post}) => {
+  const navigate=useNavigate();
     const currentuser=dummyUserData
     const postwithhastags=post.content.replace(/(#[A-Za-z0-9_]+)/g,'<span class="text-primary">$1</span> ')
   return (
-    <div className="w-full flex flex-col gap-4 rounded-xl shadow-md p-5 border border-neutral-200">
+    <div className="w-full bg-white flex flex-col gap-4 rounded-xl shadow-md p-5 border border-neutral-200">
         {/* user_card */}
-      <div className="flex gap-3 justify-start items-center"> 
+      <div className="hover:cursor-pointer flex gap-3 justify-start items-center" onClick={()=>{navigate(`/profile/${post.user._id}`)}}> 
         <img className="size-10 rounded-4xl" src={post.user.profile_picture} alt="" />
         <div className="flex flex-col leading-tight">
             <h1 className="text-black/80 text-md flex  justify-start items-center gap-1">{post.user.full_name} <BadgeCheck className="size-5 text-primary"/> </h1>

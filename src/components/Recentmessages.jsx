@@ -14,10 +14,10 @@ const Recentmessages = () => {
       <div className="flex flex-col gap-2">
         {recentmessages.map((recentmessage, idx) => {
           return (
-            <NavLink to={`messages/${recentmessage.from_user_id._id}`}>
+            <NavLink to={`messages/${recentmessage.from_user_id._id}`} >
                 <div
                   key={idx}
-                  className="flex gap-3 justify-center items-start p-1 "
+                  className="flex gap-3 justify-center items-start p-1 hover:bg-slate-200 rounded-md"
                 >
                   <img
                     className="size-12 border border-neutral-300 shadow-md   rounded-4xl"
