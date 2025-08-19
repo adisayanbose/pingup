@@ -210,7 +210,7 @@ export const dummyRecentMessagesData = [
         "from_user_id": dummyUserData,
         "to_user_id": dummyUserData,
         "text": "This is a Samsung Tablet",
-        "message_type": "text",
+        "messag_type": "text",
         "media_url": "",
         "createdAt": "2025-07-17T10:11:08.437Z",
         "updatedAt": "2025-07-25T08:07:11.893Z",

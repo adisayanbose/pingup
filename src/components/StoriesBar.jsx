@@ -15,7 +15,7 @@ const StoriesBar = () => {
     setstories(dummyStoriesData);
   }, []);
   return (
-    <div className="min-h-52  max-h-52 py-5 flex  gap-2 outline-none overflow-x-auto no-scrollbar">
+    <div className="min-h-52  max-h-52 pb-5 flex  gap-2 outline-none overflow-x-auto no-scrollbar">
       {/* create_Story */}
       <div
         onClick={() => {
