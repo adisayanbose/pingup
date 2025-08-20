@@ -16,32 +16,18 @@ import Button from "./Button";
 
 const Sidebar = () => {
   const user = dummyUserData;
-  const [siderbaropen, setsidebaropen] = useState(false);
   const { signOut } = useClerk();
   return (
     <div className="h-full w-1/7  flex flex-col">
       <div className="w-full px-3 py-2 flex items-center gap-3 ">
-        <div className="size-10 flex justify-center items-center">
-          {siderbaropen ? (
-            <X
-              onClick={() => {
-                setsidebaropen(false);
-              }}
-            />
-          ) : (
-            <Menu
-              onClick={() => {
-                setsidebaropen(true);
-              }}
-            />
-          )}
+        <div className="pl-10flex justify-center items-center">
+          <img
+            src={assets.logo}
+            alt=""
+            srcSet=""
+            className="flex justify-center items-center"
+          />
         </div>
-        <img
-          src={assets.logo}
-          alt=""
-          srcSet=""
-          className="flex justify-center items-center"
-        />
       </div>
       <hr className="border-neutral-400    " />
 
@@ -57,7 +43,7 @@ const Sidebar = () => {
           <SidebarComp icon={Search} label={"Discover"} to={"Discover"} />
           <SidebarComp icon={User} label={"Profile"} to={"Profile"} />
         </div>
-       
+
         <Button icon={CirclePlus} text={"Create Post"} />
       </div>
 
